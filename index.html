@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>for my beautiful gf zahra aurora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:"Inter",sans-serif;overflow-x:hidden;
+    }
+    section{
+      min-height:100vh;
+      display:flex;flex-direction:column;
+      justify-content:center;align-items:center;
+      padding:40px 20px;
+      transition:transform .6s ease;
+    }
+    h1{font-family:"Great Vibes",cursive;font-size:52px;margin:0 0 12px;text-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    p{max-width:520px;margin:10px auto;font-size:18px;line-height:1.6;}
+    .btn{
+      display:inline-block;margin-top:20px;padding:12px 24px;
+      border:none;border-radius:30px;
+      background:#fff;color:#e75480;
+      font-weight:600;font-size:16px;cursor:pointer;transition:.3s;
+      text-decoration:none;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .btn:hover{background:#ffe5ec;transform:translateY(-2px);}
+    #home{background:linear-gradient(135deg,#ffdde1,#ee9ca7);color:#fff;text-align:center;}
+    #page2{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);color:#333;text-align:center;}
+    #gallery{background:linear-gradient(135deg,#fbc2eb,#a6c1ee);}
+    .gallery{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:16px;width:100%;max-width:900px;margin-top:20px;
+    }
+    .gallery img{
+      width:100%;height:220px;object-fit:cover;
+      border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.15);
+      transition:.4s;cursor:pointer;
+    }
+    .gallery img:hover{transform:scale(1.05);}
+    .heart{position:absolute;top:-20px;color:#fff;font-size:20px;animation: fall 5s linear infinite;opacity:0.8;}
+    @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);}100%{transform:translateY(110vh) rotate(360deg);}}
+  </style>
+</head>
+<body>
+
+  <section id="home">
+    <h1>hi darling 💕</h1>
+    <p>
+      aku minta maaf karna akhir" ini sering marah sering sibuk ya sayaang 
+      aku buatin ini sebagai permintaan maafku semoga suka ya sayaang
+    </p>
+    <button class="btn" onclick="goTo('page2')">Lanjut ➡</button>
+  </section>
+
+  <section id="page2" style="display:none">
+    <h1>this flowers for you 🌹</h1>
+    <p>
+      kita sudah pacaran hampir lima tahun makasi karna udah
+      selalu sabar sama aku ya sayaang aku sayaang bgt sama zahra
+      semoga kita bisa selamanya ya sayaang aku sayaang zahra 💞
+    </p>
+    <div>
+      <button class="btn" onclick="goTo('home')">⬅ Kembali</button>
+      <button class="btn" onclick="goTo('gallery')">Lihat Galeri 📸</button>
+    </div>
+  </section>
+
+  <section id="gallery" style="display:none">
+    <h1>our galery 📸</h1>
+    <p>our moment 💕</p>
+    <div class="gallery">
+      <img src="1.jpg" alt="Foto 1">
+      <img src="2.jpg" alt="Foto 2">
+      <img src="3.jpg" alt="Foto 3">
+      <img src="4.jpg" alt="Foto 5">
+      <img src="5.jpg" alt="Foto 6">
+      <img src="7.jpg" alt="Foto 7">
+      <img src="6.jpg" alt="Foto 8">
+      <img src="8.jpg" alt="Foto 9">
+    </div>
+    <div>
+      <button class="btn" onclick="goTo('page2')">⬅ Kembali</button>
+    </div>
+  </section>
+
+  <script>
+    function goTo(id){
+      document.querySelectorAll('section').forEach(s=>s.style.display='none');
+      document.getElementById(id).style.display='flex';
+    }
+    function buatHati(){
+      if(document.getElementById("home").style.display==="none") return;
+      const heart=document.createElement("div");
+      heart.className="heart";
+      heart.innerText="❤";
+      heart.style.left=Math.random()*100+"vw";
+      heart.style.fontSize=(14+Math.random()*20)+"px";
+      heart.style.animationDuration=(3+Math.random()*3)+"s";
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(buatHati,400);
+  </script>
+</body>
+</html>
